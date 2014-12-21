@@ -3,7 +3,9 @@
 
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">    
     <meta charset="UTF-8">
+    <base href="/"></base>
     <title>Captain Resource Organizer</title>
   </head>
 
@@ -15,28 +17,12 @@
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">
-            
+            Resource Organizer
             </a>
           </div>
         </div>
       </nav>
       <div ui-view=""></div>
-<!--
-      <input ng-model="activeTags">
-      <div class="row">
-        <div class="col-sm-3">
-          <ul>
-            <li ng-repeat="tag in datas">
-              <label>{{tag.login}}</label>
-              <input type="checkbox" value="{{tag.login}}" ng-true-value="tag.login" ng-false-value="" />
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-9" ng-repeat="data in datas | selectedTags:activeTags">
-          {{data.login}}
-        </div>
-      </div>
--->
 
     </div>
 

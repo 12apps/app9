@@ -1,22 +1,65 @@
 <div class="row">
-  <ul>
-    <li ng-repeat="resource in feed">
-      <label>Title:</label>
-      <p>{{resource.title}}</p>
-      <label>Url:</label>
-      <p>{{resource.url}}</p>
-      <label>Description:</label>
-      <p>{{resource.description}}</p>
-      <label>Tags:</label>
-      <ul>
-        <li ng-repeat="tag in resource.tags">
-          {{tag}}
-        </li>
-      </ul>
-      
-    </li>
-    
-  </ul>
+  <panel panel-default>
+  <form class="form-horizontal" ng-submit="submitForm()">
+  <fieldset>
+  <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="user.name">
+      </div>
+    </div>    
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputURL" class="col-lg-2 control-label">URL</label>
+      <div class="col-lg-10">
+        <input type="URL" class="form-control" id="inputURL" placeholder="URL" ng-model="resource.url">
+      </div>
+     </div> 
+    <div class="form-group">
+      <label for="inputURL" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="resource.title">
+      </div>
+     </div>      
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea" ng-model="resource.description"></textarea>
+      </div>
+    </div>
   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+ 
+  <div class="panel panel-default" ng-repeat="resource in feed">
+    <div class="panel-heading" role="tab" id="heading{{$index}}">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" aria-expanded="false" aria-controls="collapse{{$index}}">
+          {{resource.title}}
+        </a>
+        <a href="{{resource.url}}"><span class="glyphicon glyphicon-globe pull-right" aria-hidden="true"></span></a>
+      </h4>
+    </div>
+    <div id="collapse{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$index}}">
+      <div class="panel-body">
+      {{resource.description}}
+      </div>
+    </div>
+  </div>
+</div>
+
+</panel>
   
 </div>
