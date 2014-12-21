@@ -8,7 +8,6 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./api/v1');
-var config = require('./config');
 
 mongoose.connect(process.env.MONGOHQ_URL);
 var app = express();
