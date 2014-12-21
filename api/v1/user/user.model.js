@@ -1,11 +1,11 @@
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-// var Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-// var userSchema = new Schema({
-//   name: String,
-//   email: String,
-//   profile: {}
-// });
+var userSchema = new Schema({
+  name: String,
+  email: String,
+  profile: {}
+});
 
-// module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('user', userSchema);

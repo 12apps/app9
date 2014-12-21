@@ -1,14 +1,23 @@
-// var express = require('express');
-// var router = express.Router();
+var express = require('express');
+var router = express.Router();
+var userController = require('./user.controller');
+var resourceApi = require('./resources');
 
-// router.get('/', userController.index);
+function passPrimaryParams(req, res, next) {
+   req.primaryParams = req.params.user_id;
+   next();
+}
 
-// router.post('/', userController.create);
+router.use('/:user_id/resources', passPrimaryParams, resourceApi);
 
-// router.get('/:id', userController.read);
+router.get('/', userController.index);
 
-// router.put('/:id', userController.update);
+router.post('/', userController.create);
 
-// router.delete('/:id', userController.destroy);
+router.get('/:id', userController.read);
 
-// module.exports = router;
+router.put('/:id', userController.update);
+
+router.delete('/:id', userController.destroy);
+
+module.exports = router;

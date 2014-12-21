@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-// var userApi = require('./user');
+var userApi = require('./user');
+var resourceController = require('./user/resources/resource.controller');
 
-
-// router.use('/user', userApi);
+router.get('/feed', resourceController.feed);
+router.use('/user', userApi);
 
 module.exports = router;
