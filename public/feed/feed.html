@@ -1,0 +1,22 @@
+<div class="row">
+  <ul>
+    <li ng-repeat="resource in feed">
+      <label>Title:</label>
+      <p>{{resource.title}}</p>
+      <label>Url:</label>
+      <p>{{resource.url}}</p>
+      <label>Description:</label>
+      <p>{{resource.description}}</p>
+      <label>Tags:</label>
+      <ul>
+        <li ng-repeat="tag in resource.tags">
+          {{tag}}
+        </li>
+      </ul>
+      
+    </li>
+    
+  </ul>
+  
+  
+</div>
